@@ -47,8 +47,9 @@ fi
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
- ZSH_THEME="powerlevel10k/powerlevel10k"
-
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+  source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+## ^^ new way said to remove first theme decleration
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -227,17 +228,37 @@ alias gcl='git clone'
 alias gta='git tag -a -m'
 alias gf='git reflog'
 
+## Metasploit aliases
 alias 'msf=msfconsole'
+alias "msfv=msfvenom"
+
 # leverage an alias from the ~/.gitconfig
 
+## These two are in the bin for hydra, a nice to know alias for ease of use with these tools
 alias hydra-wizard='hydra-wizard.sh'
 alias hw='hydra-wizard.sh'
+
 alias rake="noglob rake"
 # sort files in current directory by the number of words they contain
 alias 'wordy=wc -w * | sort | tail -n10'
 alias 'filecount=ls -aRF | wc -l'
+
+## Prevents error on M1 machines when homebrew is not installed in /usr/local and is in 
+## /opt/homebrew instead
 alias "brew=arch -arm64 brew"
+
+# pythons easier to type than python3...ever so slightly...
 alias "python=python3"
+
+# See images in terminal, need catimg installed. brew install catimg
+alias "see=catimg"
+
+
+#### Aliases for brew services because it's annoying to type out 247
+alias "bsl=brew services list"
+alias "bs=brew services"
+alias "bs-start=brew services start"
+alias "bs-stop=brew services stop"
 
 
 # -------------------------------------------------------------------
