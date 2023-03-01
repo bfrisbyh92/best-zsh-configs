@@ -349,6 +349,26 @@ modify-wordlist() {
   done < "$1"
 }
 
+function capitalize-wordlist() {
+    if [[ -z $1 ]]; then
+        echo "Usage: capitalize_wordlist [file]"
+        return 1
+    fi
+
+    if [[ ! -f $1 ]]; then
+        echo "File not found: $1"
+        return 1
+    fi
+
+    # Create a temporary file to hold the capitalized wordlist
+    local tmpfile=$(mktemp)
+
+    # Use sed to capitalize the first letter of each word and save to the temporary file
+    sed -E 's/(\b[[:alpha:]])/ \U\1/g' "$1" > "$tmpfile"
+
+    # Overwrite the original file with the capitalized wordlist
+    mv "$tmpfile" "$1"
+}
 
 lowercase() {
   tr '[:upper:]' '[:lower:]' < "$1" > "$1.txt" && mv "$1.txt" "$1"
